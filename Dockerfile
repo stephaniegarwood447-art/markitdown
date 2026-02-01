@@ -9,11 +9,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ffmpeg \
     exiftool
 
-ARG INSTALL_GIT=false
-RUN if [ "$INSTALL_GIT" = "true" ]; then \
-    apt-get install -y --no-install-recommends \
-    git; \
-    fi
+# Git is now installed via DevContainer features
 
 # Cleanup
 RUN rm -rf /var/lib/apt/lists/*
